@@ -25,7 +25,7 @@ def estimate_num_tokens(text: str) -> int:
     if not hasattr(estimate_num_tokens, "tokenizer"):
         os.environ["TOKENIZERS_PARALLELISM"] = "false"
         estimate_num_tokens.tokenizer = AutoTokenizer.from_pretrained(
-            "mistralai/Mistral-7B-Instruct-v0.2"
+            "/models/preset/meta-llama/Meta-Llama-3.1-70B-Instruct/v1.0/"
         )
     return len(estimate_num_tokens.tokenizer.tokenize(text))
 

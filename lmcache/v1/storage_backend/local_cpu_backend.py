@@ -238,7 +238,7 @@ class LocalCPUBackend(StorageBackendInterface):
         if memory_obj is not None or not eviction:
             return memory_obj
 
-        assert isinstance(self.memory_allocator, MixedMemoryAllocator)
+        # assert isinstance(self.memory_allocator, MixedMemoryAllocator)
 
         evict_keys = []
         with self.cpu_lock:

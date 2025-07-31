@@ -148,6 +148,8 @@ class InfinistoreConnector(RemoteConnector):
         buf_idx = await self.send_queue.get()
         buffer = self.send_buffers[buf_idx]
 
+        print(len(kv_bytes), kv_shape, kv_dtype, memory_format)
+        
         RemoteMetadata(len(kv_bytes), kv_shape, kv_dtype, memory_format).serialize_into(
             buffer
         )
